@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public interface MenuItemService {
     public List<MenuItemDto> getAllMenuItems();
     public MenuItemDto createMenuItem(MenuItemDto menuItemDto);

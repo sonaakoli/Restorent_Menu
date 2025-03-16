@@ -5,10 +5,13 @@ import com.shonali.restomenu.models.MenuItem;
 import com.shonali.restomenu.repositories.MenuItemRepository;
 import com.shonali.restomenu.service.MenuItemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Service
 public class MenuItemServiceImpl implements MenuItemService {
 
     @Autowired
@@ -25,7 +28,9 @@ public class MenuItemServiceImpl implements MenuItemService {
 
     @Override
     public MenuItemDto createMenuItem(MenuItemDto menuItemDto) {
+    	
         MenuItem menuItem = MenuItem.builder().name(menuItemDto.getName())
+        		.id(menuItemDto.getId())
                 .price(menuItemDto.getPrice())
                 .description(menuItemDto.getDescription())
                 .build();
